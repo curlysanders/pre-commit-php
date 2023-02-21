@@ -19,6 +19,7 @@
   entry: pre_commit_hooks/php-unit.sh
   language: script
   files: \.php$
+  require_serial: true
 
 - id: php-cs
   name: PHP Codesniffer
@@ -28,7 +29,7 @@
   files: \.php$
 
 - id: php-cbf
-  name: PHP Codesniffer (Code Beutifier and Formatter)
+  name: PHP Codesniffer (Code Beautifier and Formatter)
   description: Run php codesniffer against all staged PHP files.
   entry: pre_commit_hooks/php-cbf.sh
   language: script
@@ -47,3 +48,12 @@
   entry: pre_commit_hooks/php-stan.sh
   language: script
   files: \.php$
+  require_serial: true
+
+- id: php-arkitect
+  name: PHP Arkitect
+  description: Run PHP Arkitect.
+  entry: pre_commit_hooks/php-arkitect.sh
+  language: script
+  files: \.php$
+  require_serial: true
